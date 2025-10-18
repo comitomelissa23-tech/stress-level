@@ -67,17 +67,12 @@ python main.py
 ## 📊 Analisi e Preprocessing del Dataset
 
 Il dataset originale (`dataset.csv`) è stato analizzato per verificare la qualità dei dati e prepararlo al training del modello.
-Tutti i valori delle feature sono espressi su una scala da 1 a 5,  
-e la variabile target è **“Student stress level”** (livello di stress percepito).
+Tutti i valori delle feature sono espressi su una scala da 1 a 5, e la variabile target è **“Student stress level”** (livello di stress percepito).
 
 ### 1 - Analisi inziale
 
-Prima della pulizia, il dataset è stato analizzato per verificare:
-
-- presenza di valori mancanti (`NaN`)
-- valori fuori range (devono essere tra 1 e 5)
-
-Il dataset è risultato bilanciato, quindi non è stato necessario applicare tecniche di riequilibrio.
+Il dataset è stato controllato per verificare la sua struttura generale e la distribuzione dei valori della variabile target.  
+È risultato **bilanciato**, quindi non è stato necessario applicare tecniche di riequilibrio.
 
 ### Scelte sulle fasi di preprocessing escluse
 
@@ -96,11 +91,9 @@ La funzione `clean_data()` in `data_cleaning.py`:
 - filtra eventuali valori fuori range (1–5)
 - resetta gli indici dopo la rimozione
 
-Inoltre, stampa un messaggio nel terminale con il numero di righe eliminate, per garantire trasparenza nel processo.
-
 ### 3 - Divisione in train/test
 
-In `split_dataset.py` viene effettuata la divisione del dataset con:
+In `split_dataset.py` viene effettuata la divisione del dataset con la funzione di `sklearn.model_selection`:
 
 ```
 train_test_split(df, test_size=0.2, random_state=42)
