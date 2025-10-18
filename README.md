@@ -71,17 +71,17 @@ Tutti i valori delle feature sono espressi su una scala da 1 a 5, e la variabile
 
 ### 1 - Analisi inziale
 
-Il dataset è stato controllato per verificare la sua struttura generale e la distribuzione dei valori della variabile target.  
-È risultato **bilanciato**, quindi non è stato necessario applicare tecniche di riequilibrio.
+**Fasi di preprocessing valutate**
 
-### Scelte sulle fasi di preprocessing escluse
-
-Durante l’analisi, sono state valutate altre operazioni di preprocessing comuni nei progetti di Machine Learning, ma in questo caso non necessarie:
+Durante l’analisi, sono state valutate le operazioni di preprocessing più comuni nei progetti di Machine Learning, ma in questo caso non necessarie:
 
 - **Encoding:** tutte le variabili sono già numeriche (da 1 a 5), quindi non è richiesto alcun tipo di codifica aggiuntiva.
 - **Normalizzazione / Scaling:** poiché tutte le feature condividono la stessa scala (1–5), una normalizzazione non avrebbe aggiunto informazioni utili.
 - **Feature Selection:** il dataset contiene solo 5 feature principali, quindi rimuoverne alcune avrebbe ridotto eccessivamente la capacità informativa del modello.
 - **Bilanciamento delle classi:** non è stata applicata alcuna tecnica di riequilibrio, poiché non sono emerse forti discrepanze nella distribuzione della variabile target “Student stress level”.
+
+Successivamente, il dataset è stato analizzato per verificarne la struttura generale e la distribuzione della variabile target.  
+È risultato bilanciato, motivo per cui non è stata applicata alcuna tecnica di riequilibrio.
 
 ### 2 - Pulizia dei dati
 
