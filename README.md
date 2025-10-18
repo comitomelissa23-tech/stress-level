@@ -1,7 +1,17 @@
 # 🧠 Student Stress Level Classifier
 
 Questo progetto di Machine Learning classifica il livello di stress degli studenti (da 1 a 5)  
-in base a 5 variabili comportamentali come ore di sonno, attività fisica, ore di studio, risultati e salute.
+in base a variabili che descrivono abitudini, benessere e rendimento accademico.
+
+### Feature del dataset:
+
+- **Sleep quality** → qualità del sonno
+- **Weeks headaches** → frequenza settimanale di mal di testa
+- **Academic performance** → rendimento accademico percepito
+- **Study load** → carico di studio complessivo
+- **Extracurricular activities weekly** → numero di attività extracurricolari settimanali
+
+La variabile target (**Student stress level**) rappresenta il livello di stress dello studente su una scala da **1 (basso)** a **5 (alto)**.
 
 ---
 
@@ -56,8 +66,9 @@ python main.py
 
 ## 📊 Analisi e Preprocessing del Dataset
 
-Il dataset originale (`dataset.csv`) contiene 5 variabili comportamentali numeriche (da 1 a 5)
-e una colonna target chiamata “Student stress level”.
+Il dataset originale (`dataset.csv`) è stato analizzato per verificare la qualità dei dati e prepararlo al training del modello.
+Tutti i valori delle feature sono espressi su una scala da 1 a 5,  
+e la variabile target è **“Student stress level”** (livello di stress percepito).
 
 ### 1 - Analisi inziale
 
@@ -65,9 +76,17 @@ Prima della pulizia, il dataset è stato analizzato per verificare:
 
 - presenza di valori mancanti (`NaN`)
 - valori fuori range (devono essere tra 1 e 5)
-- equilibrio tra le classi (distribuzione dello stress da 1 a 5)
 
 Il dataset è risultato bilanciato, quindi non è stato necessario applicare tecniche di riequilibrio.
+
+### Scelte sulle fasi di preprocessing escluse
+
+Durante l’analisi, sono state valutate altre operazioni di preprocessing comuni nei progetti di Machine Learning, ma in questo caso non necessarie:
+
+- **Encoding:** tutte le variabili sono già numeriche (da 1 a 5), quindi non è richiesto alcun tipo di codifica aggiuntiva.
+- **Normalizzazione / Scaling:** poiché tutte le feature condividono la stessa scala (1–5), una normalizzazione non avrebbe aggiunto informazioni utili.
+- **Feature Selection:** il dataset contiene solo 5 feature principali, quindi rimuoverne alcune avrebbe ridotto eccessivamente la capacità informativa del modello.
+- **Bilanciamento delle classi:** non è stata applicata alcuna tecnica di riequilibrio, poiché non sono emerse forti discrepanze nella distribuzione della variabile target “Student stress level”.
 
 ### 2 - Pulizia dei dati
 
