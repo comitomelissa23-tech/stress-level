@@ -45,19 +45,11 @@ source .venv/bin/activate
 ### 2 - Installa le librerie necessarie
 
 ```
-
 pip install -r requirement.txt
-
 ```
 
 ### 3 - Esegui la pipeline completa
 
 ```
-
 python main.py
-
-```
-
-```
-
 ```
