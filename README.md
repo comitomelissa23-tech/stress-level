@@ -33,19 +33,13 @@ Per eseguire l’intera pipeline e ottenere i risultati finali, segui questi pas
 
 Questo permette di installare le librerie solo per il progetto, senza modificare quelle del sistema.
 
-abash
+```bash
 python -m venv .venv
-
 # Attiva l'ambiente
-
 # Su Windows:
-
 .venv\Scripts\activate
-
 # Su macOS / Linux:
-
-source .venv/bin/activat
-
+source .venv/bin/activate
 ```
 
 ### 2 - Installa le librerie necessarie
@@ -61,6 +55,8 @@ pip install -r requirement.txt
 ```
 
 python main.py
+
+```
 
 ```
 
