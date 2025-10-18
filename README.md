@@ -29,7 +29,7 @@ in base a 5 variabili comportamentali come ore di sonno, attività fisica, ore d
 
 Per eseguire l’intera pipeline e ottenere i risultati finali, segui questi passaggi:
 
-### 1 - (Facoltativo ma consigliato) — crea un ambiente virtuale
+### 1 - (Facoltativo ma consigliato) — Crea un ambiente virtuale
 
 Questo permette di installare le librerie solo per il progetto, senza modificare quelle del sistema.
 
@@ -63,9 +63,9 @@ e una colonna target chiamata “Student stress level”.
 
 Prima della pulizia, il dataset è stato analizzato per verificare:
 
-- presenza di valori mancanti (`NaN`);
-- valori fuori range (devono essere tra 1 e 5);
-- equilibrio tra le classi (distribuzione dello stress da 1 a 5).
+- presenza di valori mancanti (`NaN`)
+- valori fuori range (devono essere tra 1 e 5)
+- equilibrio tra le classi (distribuzione dello stress da 1 a 5)
 
 Il dataset è risultato bilanciato, quindi non è stato necessario applicare tecniche di riequilibrio.
 
@@ -73,9 +73,9 @@ Il dataset è risultato bilanciato, quindi non è stato necessario applicare tec
 
 La funzione `clean_data()` in `data_cleaning.py`:
 
-- rimuove le righe con valori mancanti (`NaN`);
-- filtra eventuali valori fuori range (1–5);
-- resetta gli indici dopo la rimozione.
+- rimuove le righe con valori mancanti (`NaN`)
+- filtra eventuali valori fuori range (1–5)
+- resetta gli indici dopo la rimozione
 
 Inoltre, stampa un messaggio nel terminale con il numero di righe eliminate, per garantire trasparenza nel processo.
 
