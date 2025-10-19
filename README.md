@@ -80,9 +80,11 @@ Durante l’analisi, sono state valutate le operazioni di preprocessing più com
 - **Feature Selection:** il dataset contiene solo 5 feature principali, quindi rimuoverne alcune avrebbe ridotto eccessivamente la capacità informativa del modello.
 - **Bilanciamento delle classi:** non è stata applicata alcuna tecnica di riequilibrio, poiché non sono emerse forti discrepanze nella distribuzione della variabile target “Student stress level”.
 
-![Distribuzione dei livelli di stress degli studenti](stress_distribution.png)
+<p align="center">
+  <img src="stress_distribution.png" width="500"/>
+</p>
 
-_È risultato bilanciato, motivo per cui non è stata applicata alcuna tecnica di riequilibrio._
+<p align="center"><em>È risultato bilanciato, motivo per cui non è stata applicata alcuna tecnica di riequilibrio.</em></p>
 
 ### 2 - Pulizia dei dati
 
