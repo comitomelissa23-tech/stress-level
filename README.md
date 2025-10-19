@@ -193,7 +193,7 @@ Le performance sono riassunte tramite il **Classification Report** e la **Confus
 <table align="center">
   <tr>
     <td>
-      <img src="classification_report.png" width="600" />
+      <img src="result/classification_report.png" width="600" />
     </td>
   </tr>
   <tr>
@@ -207,7 +207,7 @@ Le performance sono riassunte tramite il **Classification Report** e la **Confus
 <table align="center">
   <tr>
     <td>
-      <img src="confusion_matrix.png" width="600" />
+      <img src="result/confusion_matrix.png" width="600" />
     </td>
   </tr>
   <tr>
