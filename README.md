@@ -81,7 +81,7 @@ Durante l’analisi, sono state valutate le operazioni di preprocessing più com
 - **Bilanciamento delle classi:** non è stata applicata alcuna tecnica di riequilibrio, poiché non sono emerse forti discrepanze nella distribuzione della variabile target “Student stress level”.
 
 <p align="center">
-  <img src="stress_distribution.png" width="500"/>
+  <img src="results/stress_distribution.png" width="500"/>
 </p>
 
 <p align="center"><em>È risultato bilanciato, motivo per cui non è stata applicata alcuna tecnica di riequilibrio.</em></p>
@@ -163,3 +163,39 @@ Gli iperparametri principali impostati sono:
 - `random_state=42` → per garantire la riproducibilità dei risultati.
 
 Questi valori sono stati scelti dopo test preliminari che hanno mostrato un buon equilibrio tra accuratezza e generalizzazione del modello sui dati di validazione.
+
+## 📈 Testing / Results
+
+Dopo la fase di addestramento, il modello è stato testato sul **20% dei dati rimanenti** (set di test), con l’obiettivo di valutare la capacità di generalizzare su esempi mai visti prima.
+
+### 1 - Metriche di valutazione
+
+Per misurare le prestazioni del modello sono state utilizzate le metriche di classificazione standard, calcolate tramite le funzioni di `scikit-learn`:
+
+- **Accuracy** → indica la percentuale di previsioni corrette sul totale dei campioni.
+
+L'accuracy si calcola come $Accuracy = \frac{Previsioni\ corrette}{Totale\ dei\ campioni}$
+
+- **Precision** → misura la capacità del modello di evitare falsi positivi, cioè quante delle istanze previste come appartenenti a una classe sono effettivamente corrette.
+
+- **Recall** → valuta la capacità del modello di riconoscere tutti gli esempi appartenenti a una determinata classe (ridurre i falsi negativi).
+
+- **F1-Score** → rappresenta la media armonica tra Precision e Recall. È utile quando le classi non sono perfettamente bilanciate.
+
+### 2 - Analisi dei risultati
+
+Il modello ha prodotto risultati coerenti e bilanciati tra le varie classi di stress, mostrando una buona capacità di generalizzare sui dati di test.
+
+Le performance sono riassunte tramite il **Classification Report** e la **Confusion Matrix**, che permettono di analizzare in dettaglio i risultati per ogni livello di stress (da 1 a 5).
+
+<p align="center">
+  <img src="results/classification_report.png" width="500"/>
+</p>
+
+<p align="center"><em>Dal classification report è possibile osservare valori di precisione e recall simili tra le classi, segno che il modello non tende a favorirne una in particolare.</em></p>
+
+<p align="center">
+  <img src="results/confusion_matrix.png" width="500"/>
+</p>
+
+<p align="center"><em>La confusion matrix mostra che la maggior parte delle predizioni si concentra sulla diagonale principale, confermando una buona accuratezza complessiva e una bassa confusione tra i livelli di stress contigui.</em></p>
