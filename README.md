@@ -73,7 +73,7 @@ Tutti i valori delle feature sono espressi su una scala da 1 a 5, e la variabile
 
 **Fasi di preprocessing valutate**
 
-Durante l’analisi, sono state valutate le operazioni di preprocessing più comuni nei progetti di Machine Learning, ma in questo caso non necessarie:
+Durante l’analisi, sono state valutate le operazioni di preprocessing più comuni nei progetti di Machine Learning, ma in questo caso **non sono state necessarie**:
 
 - **Encoding:** tutte le variabili sono già numeriche (da 1 a 5), quindi non è richiesto alcun tipo di codifica aggiuntiva.
 - **Normalizzazione / Scaling:** poiché tutte le feature condividono la stessa scala (1–5), una normalizzazione non avrebbe aggiunto informazioni utili.
@@ -85,6 +85,11 @@ Durante l’analisi, sono state valutate le operazioni di preprocessing più com
 </p>
 
 <p align="center"><em>È risultato bilanciato, motivo per cui non è stata applicata alcuna tecnica di riequilibrio.</em></p>
+
+Sono state invece eseguite le altre due operazioni di preprocessing, ovvero:
+
+- **Pulizia dei dati**
+- **Divisione in train/test**
 
 ### 2 - Pulizia dei dati
 
