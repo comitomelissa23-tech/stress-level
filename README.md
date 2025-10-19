@@ -174,7 +174,9 @@ Per misurare le prestazioni del modello sono state utilizzate le metriche di cla
 
 - **Accuracy** → indica la percentuale di previsioni corrette sul totale dei campioni.
 
-L'accuracy si calcola come $Accuracy = \frac{Previsioni\ corrette}{Totale\ dei\ campioni}$
+$$
+Accuracy = \frac{Previsioni\ corrette}{Totale\ dei\ campioni}
+$$
 
 - **Precision** → misura la capacità del modello di evitare falsi positivi, cioè quante delle istanze previste come appartenenti a una classe sono effettivamente corrette.
 
@@ -189,13 +191,13 @@ Il modello ha prodotto risultati coerenti e bilanciati tra le varie classi di st
 Le performance sono riassunte tramite il **Classification Report** e la **Confusion Matrix**, che permettono di analizzare in dettaglio i risultati per ogni livello di stress (da 1 a 5).
 
 <p align="center">
-  <img src="results/classification_report.png" width="500"/>
+  <img src="results/classification_report.png" width="600"/>
 </p>
 
 <p align="center"><em>Dal classification report è possibile osservare valori di precisione e recall simili tra le classi, segno che il modello non tende a favorirne una in particolare.</em></p>
 
 <p align="center">
-  <img src="results/confusion_matrix.png" width="500"/>
+  <img src="results/confusion_matrix.png" width="600"/>
 </p>
 
 <p align="center"><em>La confusion matrix mostra che la maggior parte delle predizioni si concentra sulla diagonale principale, confermando una buona accuratezza complessiva e una bassa confusione tra i livelli di stress contigui.</em></p>
