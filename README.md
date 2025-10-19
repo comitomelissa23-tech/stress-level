@@ -107,7 +107,8 @@ In `split_dataset.py` viene effettuata la divisione del dataset con la funzione 
 train_test_split(df, test_size=0.2, random_state=42)
 ```
 
-L’80% dei dati viene usato per l’addestramento e il restante 20% per la valutazione.
+L’80% dei dati viene utilizzato per l’addestramento e il restante 20% per la valutazione, percentuali considerate uno standard di riferimento nella validazione dei modelli di Machine Learning.
+Questa suddivisione consente di fornire al modello una quantità sufficiente di dati per apprendere in modo efficace, mantenendo al tempo stesso un insieme separato per testare la sua capacità di generalizzare su dati mai visti prima.
 
 I due file generati vengono salvati in:
 
@@ -117,3 +118,48 @@ processed_data/test.csv
 ```
 
 In questo modo, i dati puliti e separati possono essere riutilizzati anche in sessioni future senza dover ripetere la pulizia.
+
+## 🤖 Training
+
+Il modello scelto per l’addestramento è un **Decision Tree Classifier**, una tecnica di _supervised learning_ utilizzata per problemi di classificazione.
+Questo modello è stato selezionato per la sua interpretabilità e per la capacità di gestire feature numeriche di piccola scala (da 1 a 5 nel nostro dataset), senza necessità di normalizzazione o scaling.
+
+### 1 - Modello utilizzato
+
+Il **Decision Tree Classifier** costruisce una struttura ad albero che suddivide progressivamente il dataset in sottoinsiemi più omogenei in base ai valori delle feature.
+Ogni nodo dell’albero rappresenta una decisione basata su una variabile (feature), e ogni ramo una possibile risposta.
+L’obiettivo è minimizzare l’impurità delle classi all’interno delle foglie, creando regole di decisione semplici e interpretabili.
+
+### 2 - Come è stato allenato
+
+L’addestramento è stato eseguito sul file `train.csv`, generato durante la fase di preprocessing.
+Il dataset è stato suddiviso in 80% training e 20% test per valutare le performance in modo bilanciato.
+Durante il training, il modello ha appreso le relazioni tra le feature (come sleep quality, study load, academic performance, ecc.) e il livello di stress dello studente.
+
+L’allenamento è stato implementato nel file `train_model.py` utilizzando la libreria `scikit-learn`.
+
+### 3 - Motivazione e funzionamento del modello
+
+Il Decision Tree è stato scelto per tre motivi principali:
+
+1. **Semplicità e interpretabilità**: ogni decisione può essere visualizzata e compresa facilmente.
+
+2. **Adatto a dataset piccoli**: non richiede grandi quantità di dati né tuning complesso.
+
+3. **Gestione di feature discrete**: funziona bene con valori categorici o numerici su scale limitate (1–5).
+
+Durante la costruzione dell’albero, l’algoritmo seleziona la feature più informativa in base alla Gini Impurity, che misura quanto i sottoinsiemi risultanti siano “puri” (cioè contenenti campioni della stessa classe).
+
+### 4 - Scelta degli iperparametri
+
+Gli iperparametri principali impostati sono:
+
+- `criterion="gini"` → per misurare l’impurità dei nodi.
+
+- `max_depth=5` → per evitare overfitting, limitando la profondità dell’albero.
+
+- `min_samples_split=2` → per consentire la creazione di nuovi nodi solo quando ci sono almeno due campioni.
+
+- `random_state=42` → per garantire la riproducibilità dei risultati.
+
+Questi valori sono stati scelti dopo test preliminari che hanno mostrato un buon equilibrio tra accuratezza e generalizzazione del modello sui dati di validazione.
