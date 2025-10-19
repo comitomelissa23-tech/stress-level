@@ -190,17 +190,14 @@ Il modello ha prodotto risultati coerenti e bilanciati tra le varie classi di st
 
 Le performance sono riassunte tramite il **Classification Report** e la **Confusion Matrix**, che permettono di analizzare in dettaglio i risultati per ogni livello di stress (da 1 a 5).
 
-<div align="center">
-  <div style="display: inline-block; text-align: left; width: 600px;">
-    <img src="results/classification_report.png" width="600"/>
-    <p style="width: 600px; text-align: left; margin: 0 auto;">
-      <em>Dal classification report è possibile osservare valori di precisione e recall simili tra le classi, segno che il modello non tende a favorirne una in particolare.</em>
-    </p>
-  </div>
-</div>
+<p align="center">
+  <img src="results/classification_report.png" width="600"/>
+</p>
+
+<p align="center"><em>Mostra valori di precision e recall uniformi tra le classi, indicando un modello bilanciato.</em></p>
 
 <p align="center">
   <img src="results/confusion_matrix.png" width="600"/>
 </p>
 
-<p align="center"><em>La confusion matrix mostra che la maggior parte delle predizioni si concentra sulla diagonale principale, confermando una buona accuratezza complessiva e una bassa confusione tra i livelli di stress contigui.</em></p>
+<p align="center"><em>La maggior parte delle predizioni è sulla diagonale principale, segno di buona accuratezza.</em></p>
