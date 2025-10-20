@@ -57,7 +57,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Greens',
             yticklabels=[1, 2, 3, 4, 5])
 plt.xlabel('Predetto (y*)')
 plt.ylabel('Reale (y)')
-plt.title('Confusion Matrix - Decision Tree', fontsize=14, fontweight='bold')
+plt.title('Confusion Matrix - Decision Tree', fontsize=14, fontweight='bold', pad=15)
 plt.tight_layout()
 plt.savefig("results/confusion_matrix.png", dpi=300, bbox_inches='tight')
 plt.close()
