@@ -70,24 +70,32 @@ df = pd.DataFrame(report).transpose()
 fig, ax = plt.subplots(figsize=(8, 5))
 bars = df.iloc[:-3, :3].plot(kind='bar', ax=ax, colormap='Set2')
 
-plt.title('Classification Report per Classe', fontsize=14, pad=15)
+# Titolo in grassetto
+plt.title('Classification Report per Classe', fontsize=14, fontweight='bold', pad=15)
 plt.ylabel('Score', fontsize=12)
 plt.xlabel('Classi', fontsize=12)
 
-plt.yticks([i/10 for i in range(0, 11)], fontsize=10)  
+plt.yticks([i/10 for i in range(0, 11)], fontsize=10)
 plt.xticks(rotation=0, fontsize=10)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 
+# Legenda
 plt.legend(['Precision', 'Recall', 'F1-Score'],
            bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0.)
 
+# Linea rossa tratteggiata per l'accuracy
 accuracy = df.loc['accuracy', 'precision']
-plt.axhline(y=accuracy, color='gray', linestyle='--', linewidth=1.2, alpha=0.8)
-plt.text(len(df.iloc[:-3]) - 0.5, accuracy + 0.02, 
-         f'Accuracy: {accuracy:.2f}', color='gray', fontsize=10, ha='right')
+plt.axhline(y=accuracy, color='red', linestyle='--', linewidth=1.2, alpha=0.8)
+
+# Impostiamo il layout prima di posizionare il testo
+plt.tight_layout(rect=[0, 0, 0.85, 1])
+fig.canvas.draw()
+
+# Scritta "Accuracy" sotto la legenda
+fig.text(0.76, 0.67, f'Accuracy: {accuracy:.2f}',
+         color='red', fontsize=10, fontweight='bold', ha='center', va='top')
 
 plt.ylim(0, 1.05)
-plt.tight_layout(rect=[0, 0, 0.85, 1])  
 
 plt.savefig("results/classification_report.png", dpi=300, bbox_inches='tight')
 plt.close()
